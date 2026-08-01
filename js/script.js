@@ -28,7 +28,7 @@ themeToggleBtn.addEventListener('click', () => {
 
 // --- 2. CROSSFADE SUAVE DE FUNDOS (HERO) ---
 const backgroundImages = [
-    'hhttps://imgur.com/a/hww4TO2#9qSJPZp',
+    'https://i.imgur.com/9qSJPZp.jpeg',
     'https://imgur.com/a/RElEYSi#Ky0LoVk',
     'https://imgur.com/a/yE0XZt8#fgOCLvi',
     'https://imgur.com/a/r5Aq3O1#KW7G1on'
