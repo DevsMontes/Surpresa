@@ -1,0 +1,625 @@
+/* ===== VARIÁVEIS CSS (SISTEMA DE TEMAS) ===== */
+:root {
+    /* Tema Claro (Padrão) */
+    --bg-color: #f8f9fa;
+    --text-primary: #2d3436;
+    --text-secondary: #636e72;
+    --accent-color: #e84393;
+    --accent-hover: #fd79a8;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    /* Tema Escuro (Elegante) */
+    --bg-color: #0f1115;
+    --text-primary: #fdfbfb;
+    --text-secondary: #b2bec3;
+    --accent-color: #ff4757;
+    --accent-hover: #ff6b81;
+    --glass-bg: rgba(25, 27, 33, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== RESET & TIPOGRAFIA ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    transition: background-color 0.6s ease, color 0.6s ease;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .elegant-title, .signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+/* Barra de Progresso de Rolagem */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+.glass-nav.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 12px 30px;
+    box-shadow: var(--card-shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.icon-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.icon-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    color: var(--accent-color);
+}
+
+/* ===== HERO SECTION (FADE SUAVE) ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#hero-bg-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out, transform 10s linear;
+}
+
+.bg-layer.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+}
+
+#particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+.elegant-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 15px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    letter-spacing: 1px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.primary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.primary-btn:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(232, 67, 147, 0.4);
+}
+
+.scroll-down {
+    color: rgba(255,255,255,0.7);
+    font-size: 2rem;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* ===== LAYOUT GERAL ===== */
+.section {
+    padding: 120px 20px;
+    position: relative;
+}
+
+.dark-section {
+    background-color: rgba(0,0,0,0.02);
+}
+[data-theme="dark"] .dark-section {
+    background-color: rgba(255,255,255,0.02);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    font-size: 1.1rem;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+/* ===== MUSIC PLAYER ===== */
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.album-art {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.play-btn-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.album-art:hover img { transform: scale(1.1); }
+.album-art:hover .play-btn-overlay { opacity: 1; }
+.play-btn-overlay.playing i:before { content: "\f04c"; }
+.play-btn-overlay.playing { opacity: 1; background: rgba(0,0,0,0.2); }
+
+.track-info {
+    flex-grow: 1;
+}
+
+.track-info h3 { margin-bottom: 5px; font-size: 1.5rem; }
+.track-info p { color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem; }
+
+.progress-container {
+    height: 6px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+[data-theme="dark"] .progress-container { background: rgba(255,255,255,0.1); }
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-color);
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+/* ===== TIMELINE ===== */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--accent-color), transparent);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(odd) { left: 0; text-align: right; }
+.timeline-item:nth-child(even) { left: 50%; }
+
+.timeline-dot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 30px;
+    z-index: 2;
+    box-shadow: 0 0 15px var(--accent-hover);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot { right: -20px; }
+.timeline-item:nth-child(even) .timeline-dot { left: -20px; }
+
+.date-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+/* ===== GRID 100 MOTIVOS ===== */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.reason-card {
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: default;
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.reason-card i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* ===== CARROSSEL NETFLIX STYLE ===== */
+.netflix-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.netflix-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 30px 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.netflix-row::-webkit-scrollbar { display: none; }
+
+.netflix-item {
+    flex: 0 0 260px; /* Largura ajustada para fotos */
+    height: 260px;   /* Deixei quadrado, encaixa perfeitamente fotos horizontais e verticais */
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #0c0c0c; /* Fundo escuro elegante para não ter espaços transparentes */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.netflix-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* A MÁGICA: Impede o corte das fotos e garante que apareçam 100% */
+}
+
+.netflix-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.netflix-item:hover {
+    transform: scale(1.10);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.netflix-item:hover .netflix-item-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botões do Carrossel */
+.carousel-nav {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    cursor: pointer;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.netflix-carousel-wrapper:hover .carousel-nav { opacity: 1; }
+.carousel-nav:hover { background: rgba(0,0,0,0.8); }
+.left-nav { left: -20px; border-radius: 10px 0 0 10px; }
+.right-nav { right: -20px; border-radius: 0 10px 10px 0; }
+
+/* ===== CARTÃO 3D INTERATIVO ===== */
+.message-container {
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.interactive-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.interactive-card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.card-front .heart-icon {
+    font-size: 5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.pulse-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse-op 1.5s infinite;
+}
+
+@keyframes pulse-op {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-back h3 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.card-back p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-style: italic;
+    font-size: 1.8rem !important;
+    color: var(--accent-color);
+    margin-top: 25px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ===== ANIMAÇÕES (SCROLL REVEAL) ===== */
+.reveal { opacity: 0; transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translate(0, 0) scale(1); }
+.fade-left { transform: translateX(-50px); }
+.fade-right { transform: translateX(50px); }
+.slide-up { transform: translateY(50px); }
+.scale-up { transform: scale(0.8); }
+
+/* ===== RESPONSIVIDADE ===== */
+@media screen and (max-width: 768px) {
+    /* Ajustes Gerais Nav */
+    .glass-nav { padding: 15px 20px; }
+    .glass-nav.scrolled { padding: 10px 20px; }
+    
+    /* Timeline */
+    .timeline-line { left: 30px; }
+    .timeline-item { width: 100%; padding-left: 80px; padding-right: 20px; text-align: left !important; }
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
+    .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 10px; right: auto; }
+    
+    /* Music Player */
+    .music-player { flex-direction: column; text-align: center; }
+    
+    /* Carrossel iPhone - Garantindo que não vaze ou esprema */
+    .netflix-row { padding: 20px 15px; } /* Ajuste fino do padding lateral */
+    .netflix-item { flex: 0 0 220px; height: 220px; } /* Proporção ideal pra telinha do iPhone */
+    .netflix-item:hover { transform: scale(1.02); } /* Escala bem sutil no mobile para evitar barra de rolagem horizontal */
+    .netflix-item-info { opacity: 1; transform: translateY(0); background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+    .carousel-nav { display: none; } /* Setas somem porque no celular a pessoa arrasta com o dedo */
+    
+    /* Card 3D iPhone */
+    .card-front, .card-back { padding: 20px; } /* Diminui padding interno pra o texto caber sem cortar */
+    .card-back h3 { font-size: 1.8rem; }
+}
