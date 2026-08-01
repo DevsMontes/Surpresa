@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Você, Meu Amor</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="scroll-progress-bar" id="scroll-bar"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">A <i class="fas fa-heart" style="color: var(--accent-color); font-size: 1rem;"></i> J</div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Mudar Cores">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div id="hero-bg-container"></div>
+        <div class="hero-overlay"></div>
+        
+        <div id="particles"></div>
+
+        <div class="hero-content reveal">
+            <h1 class="elegant-title">Nossa História<br>Em Cada Detalhe</h1>
+            <p class="hero-subtitle">Uma jornada única, feita só nossa.</p>
+            
+            <div class="hero-actions">
+                <button id="change-bg-btn" class="primary-btn">
+                    <i class="fas fa-camera-retro"></i> Mudar Cenário
+                </button>
+                <a href="#music-section" class="scroll-down">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nossa Trilha Sonora -->
+    <section id="music-section" class="section">
+        <div class="container reveal slide-up">
+            <h2 class="section-title">Nossa Trilha Sonora</h2>
+            <p class="section-subtitle">A música que embala nossos momentos</p>
+            
+            <div class="music-player glass-card">
+                <div class="album-art">
+                    <!-- Coloque uma foto de vocês ou a capa da música aqui -->
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Capa">
+                    <div class="play-btn-overlay" id="play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="track-info">
+                    <h3>Nossa Música Favorita</h3>
+                    <p>Artista - Álbum</p>
+                    <div class="progress-container">
+                        <div class="progress" id="audio-progress"></div>
+                    </div>
+                </div>
+                <!-- Substitua o src pelo arquivo mp3 da música de vocês -->
+                <audio id="our-song" src="sua-musica.mp3"></audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Linha do Tempo -->
+    <section id="timeline" class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Como Tudo Começou</h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal fade-left">
+                    <div class="timeline-dot"><i class="fas fa-star"></i></div>
+                    <div class="timeline-content glass-card">
+                        <h3>A primeira vez</h3>
+                        <span class="date-badge">30 de Março, 2024</span>
+                        <p>Aquele momento em que o mundo parou por um segundo e eu soube que minha vida iria mudar para sempre. Quando te vi com aquele vestido preto, baixinha e com os seus cachos lindos..</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal fade-right">
+                    <div class="timeline-dot"><i class="fas fa-coffee"></i></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Nossa Primeira Vez</h3>
+                        <span class="date-badge">06 de Abril, 2024</span>
+                        <p>O nervosismo, as risadas, e a certeza de que eu queria viver muitos outros dias assim com você. O primeiro beijo, contato, conexão e ali eu tive a certeza de que você era a pessoa certa para mim.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal fade-left">
+                    <div class="timeline-dot"><i class="fas fa-ring"></i></div>
+                    <div class="timeline-content glass-card">
+                        <h3>O Dia que se assumimos</h3>
+                        <span class="date-badge">15 de Abril, 2024</span>
+                        <p>O dia mais feliz da minha vida. Aonde eu assumi pela primeira vez uma garota para o mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 100 Motivos (Acordeão Interativo) -->
+    <section id="reasons" class="section dark-section">
+        <div class="container">
+            <h2 class="section-title reveal">Por que eu te amo?</h2>
+            <p class="section-subtitle reveal">Você é o motivo de todos os meus sorrisos, me encanta com uma simples risada, me facina sempre e me domina como ninguém mais nunca fez. Me impressiona com suas evoluções cada vez mais e todos os dias o meu amor só aumenta.</p>
+            
+            <div class="reasons-grid">
+                <div class="reason-card glass-card reveal scale-up">
+                    <i class="fas fa-smile"></i>
+                    <h3>Seu Sorriso</h3>
+                    <p>Ilumina qualquer dia escuro que eu tenha.</p>
+                </div>
+                <div class="reason-card glass-card reveal scale-up" style="transition-delay: 0.1s;">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Seu Apoio</h3>
+                    <p>Você sempre está lá por mim, não importa o que aconteça.</p>
+                </div>
+                <div class="reason-card glass-card reveal scale-up" style="transition-delay: 0.2s;">
+                    <i class="fas fa-brain"></i>
+                    <h3>Sua Inteligência</h3>
+                    <p>Adoro nossas conversas e sua forma de ver o mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria Netflix Style -->
+    <section id="gallery" class="section">
+        <div class="container-fluid">
+            <h2 class="section-title reveal">Nossos Moments</h2>
+            <p class="section-subtitle reveal">Nossa própria série de sucesso</p>
+            
+            <div class="netflix-carousel-wrapper reveal slide-up">
+                <button class="carousel-nav left-nav" id="nav-left"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="netflix-row" id="netflix-row">
+                    <!-- Item 1 -->
+                    <div class="netflix-item">
+                        <img src="/img/foto1.jpeg" alt="Nós 1">
+                        <div class="netflix-item-info">
+                            <h4>Temporada 1</h4>
+                            <p>O começo de tudo</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="netflix-item">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nós 2">
+                        <div class="netflix-item-info">
+                            <h4>A Viagem</h4>
+                            <p>Lembranças inesquecíveis</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="netflix-item">
+                        <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nós 3">
+                        <div class="netflix-item-info">
+                            <h4>Nossas Risadas</h4>
+                            <p>A melhor parte de mim</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="netflix-item">
+                        <img src="/img/foto4.jpeg" alt="Nós 4">
+                        <div class="netflix-item-info">
+                            <h4>Sempre Juntos</h4>
+                            <p>Para o que der e vier</p>
+                        </div>
+                    </div>
+                     <!-- Item 5 -->
+                     <div class="netflix-item">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nós 5">
+                        <div class="netflix-item-info">
+                            <h4>Futuro</h4>
+                            <p>O que ainda vamos viver</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-nav right-nav" id="nav-right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carta 3D Final -->
+    <section id="message" class="section dark-section">
+        <div class="container message-container reveal scale-up">
+            <div class="interactive-card" id="love-card">
+                <div class="card-inner">
+                    <div class="card-front glass-card">
+                        <i class="fas fa-envelope-open-text heart-icon"></i>
+                        <h3>Uma carta para você</h3>
+                        <p class="pulse-text">Toque para abrir</p>
+                    </div>
+                    <div class="card-back glass-card">
+                        <h3>Meu Amor,</h3>
+                        <p>você é sem dúvida o amor da minha vida. Quero viver ao teu lado tudo que sonhamos e planejamos juntos, você é e sempre será a minha pequena, eu nunca vou deixar que te façam mal algum, porque você é a responsavel pela que eu estou aqui hoje, lutando todos os dias para que eu consiga mudar minha realidade e poder proporcionar oque à de melhor.</p>
+                        <p>Eu te amo com a alma.</p>
+                        <p class="signature">- Arthur Eduardo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Desenvolvido com todo o meu coração &copy; 2026</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
