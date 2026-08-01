@@ -28,10 +28,10 @@ themeToggleBtn.addEventListener('click', () => {
 
 // --- 2. CROSSFADE SUAVE DE FUNDOS (HERO) ---
 const backgroundImages = [
-    'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+    'hhttps://imgur.com/a/hww4TO2#9qSJPZp',
+    'https://imgur.com/a/RElEYSi#Ky0LoVk',
+    'https://imgur.com/a/yE0XZt8#fgOCLvi',
+    'https://imgur.com/a/r5Aq3O1#KW7G1on'
 ];
 
 const bgContainer = document.getElementById('hero-bg-container');
